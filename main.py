@@ -51,7 +51,7 @@ starter_pokemon1 = pokemon("Bulbasaur", "Earth", 45, 49, 49)
 starter_pokemon2 = pokemon("Charmander", "Fire", 39, 52, 43)
 starter_pokemon3 = pokemon("Squirtle", "Water", 44, 48, 65)
 
-user_name = ""
+user_name = "Jane Doe"
 
 
 def intro():
@@ -93,22 +93,49 @@ def starter_selection():
     loading_print("\nIn my old age, I have only 3 left, but you can have one")
 
     print(color.YELLOW + f"\n\nNow, {user_name}, which Pokémon do you want?" + color.END)
-    print(color.GREEN + f"The three available Pokemon are Bulbasaur [1], Charmander [2], and Squirtle [3]" + color.END)
+    print(color.GREEN + f"The three available Pokémon are Bulbasaur [1], Charmander [2], and Squirtle [3]" + color.END)
 
     while True:
         selected_starter = input("Select your starter by typing either 1, 2, or 3!\n> ")
         if selected_starter == "1":
             selected_starter = starter_pokemon1
-            break
+            print(f"So! You want the {selected_starter.type} Pokémon, {selected_starter.name}?")
+            yn_choice = input("Yes/No > ")
+            yn_choice = yn_choice.lower()
+            if yn_choice.startswith("y"):
+                break
+            elif yn_choice.startswith("n"):
+                continue
+            else: 
+                print("\nYou have to answer Yes or No\n")
+                continue
         elif selected_starter == "2":
             selected_starter = starter_pokemon2
-            break
+            print(f"So! You want the {selected_starter.type} Pokémon, {selected_starter.name}?")
+            yn_choice = input("Yes/No > ")
+            yn_choice = yn_choice.lower()
+            if yn_choice.startswith("y"):
+                break
+            elif yn_choice.startswith("n"):
+                continue
+            else: 
+                print("\nYou have to answer Yes or No\n")
+                continue
         elif selected_starter == "3":
             selected_starter = starter_pokemon3
-            break
+            print(f"So! You want the {selected_starter.type} Pokémon, {selected_starter.name}?")
+            yn_choice = input("Yes/No > ")
+            yn_choice = yn_choice.lower()
+            if yn_choice.startswith("y"):
+                break
+            elif yn_choice.startswith("n"):
+                continue
+            else: 
+                print("\nYou have to answer Yes or No\n")
+                continue
         else:
             print("That's not an option. Please try again.\n")
             continue
 
-intro()
+#intro()
 starter_selection()
